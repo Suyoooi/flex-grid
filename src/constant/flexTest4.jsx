@@ -50,14 +50,12 @@ export default function FelxTest4() {
 
   return (
     <div>
-      {/* <div>Compaction type: {compactType || "No Compaction"}</div> */}
-      {/* <button onClick={onCompactTypeChange}>Change Compaction Type</button> */}
       <div
         className="droppable-element"
         style={{
           height: "50",
           width: "250",
-          backgroundColor: "skyblue",
+          backgroundColo: "pink",
           margin: "10",
           border: "2",
           display: "flex",
@@ -66,25 +64,14 @@ export default function FelxTest4() {
         }}
         draggable={true}
         unselectable="on"
-        // this is a hack for firefox
-        // Firefox requires some kind of initialization
-        // which we can do by adding this attribute
-        // @see https://bugzilla.mozilla.org/show_bug.cgi?id=568313
         onDragStart={(e) => e.dataTransfer.setData("text/plain", "")}
-      >
-        {/* Droppable Element (Drag me!) */}
-      </div>
+      ></div>
       <ResponsiveReactGridLayout
-        // {...this.props}
         rowHeight={30}
         cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
         layout={layout}
-        // onLayoutChange={this.onLayoutChange}
         onDrop={onDrop}
-        // WidthProvider option
         measureBeforeMount={false}
-        // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
-        // and set `measureBeforeMount={true}`.
         useCSSTransforms={mounted}
         compactType={compactType}
         preventCollision={!compactType}
@@ -97,7 +84,7 @@ export default function FelxTest4() {
             data-grid={itm}
             className="block"
             style={{
-              backgroundColor: "skyblue",
+              backgroundColor: "Pink",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
