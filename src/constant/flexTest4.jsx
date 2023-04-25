@@ -5,10 +5,10 @@ import "/node_modules/react-resizable/css/styles.css";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-export default function FelxTest4() {
-  const [compactType, setcompactType] = useState("vertical");
-  const [mounted, setmounted] = useState(false);
-  const [layout, setlayout] = useState([
+export default function FlexTest4() {
+  const [compactType, setCompactType] = useState("vertical");
+  const [mounted, setMounted] = useState(false);
+  const [layout, setLayout] = useState([
     { i: "a", x: 0, y: 0, w: 5, h: 9 },
     { i: "b", x: 0, y: 1, w: 5, h: 9 },
     { i: "c", x: 5, y: 0, w: 6, h: 9 },
@@ -16,7 +16,26 @@ export default function FelxTest4() {
   ]);
 
   useEffect(() => {
-    setmounted(true);
+    setMounted(true);
+  }, []);
+
+  // layout 객체를 JSON 문자열로 변환하여 쿠키에 저장
+  useEffect(() => {
+    document.cookie = `layout=${JSON.stringify(
+      layout
+    )}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+  }, [layout]);
+
+  // 쿠키에서 layout 객체를 가져와서 객체로 변환하여 설정
+  useEffect(() => {
+    const cookieLayout = document.cookie
+      .split(";")
+      .find((item) => item.trim().startsWith("layout="));
+
+    if (cookieLayout) {
+      const parsedLayout = JSON.parse(cookieLayout.split("=")[1]);
+      setLayout(parsedLayout);
+    }
   }, []);
 
   return (
@@ -48,3 +67,5 @@ export default function FelxTest4() {
     </div>
   );
 }
+
+//layout 값을 쿠키에 저장해 보았다... 근데 안되는것 같다....
