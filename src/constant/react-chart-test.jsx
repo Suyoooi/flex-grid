@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import axios from "axios";
@@ -13,7 +12,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { API_URL, DASHBOARD_API } from "../api/apiUrl";
 
 ChartJS.register(
   CategoryScale,
