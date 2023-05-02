@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
+import ReactChartTest2 from "./react-chart";
+import ReactChartTest from "./react-chart-test";
 
 //sessionStorage 사용 (변경된 layout 값을 저장함)
 
@@ -30,6 +32,7 @@ export default function FlexTest5() {
   }, []);
 
   // layout 객체를 sessionStorage에 저장
+  // layout을 Json 문자열로 변경해야함
   useEffect(() => {
     sessionStorage.setItem("layout", JSON.stringify(layout));
   }, [layout]);
@@ -59,6 +62,17 @@ export default function FlexTest5() {
               alignItems: "center",
             }}
           >
+            <div
+              style={{
+                display: "flex",
+                height: "30",
+                width: "80",
+                resize: "both",
+              }}
+            >
+              {/* <ReactChartTest2 /> */}
+              <ReactChartTest />
+            </div>
             {i}
           </div>
         ))}
