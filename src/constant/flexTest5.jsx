@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-import ReactChartTest2 from "./react-chart";
 import ReactChartTest from "./react-chart-test";
+import BarChartTest from "./react-chart-bar-test";
 
 //sessionStorage 사용 (변경된 layout 값을 저장함)
 
@@ -70,8 +70,8 @@ export default function FlexTest5() {
                 resize: "both",
               }}
             >
-              {/* <ReactChartTest2 /> */}
-              <ReactChartTest />
+              {/* <ReactChartTest /> */}
+              <BarChartTest />
             </div>
             {i}
           </div>
