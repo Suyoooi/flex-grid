@@ -3,13 +3,12 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
 import ReactChartTest from "./react-chart-test";
-import BarChartTest from "./react-chart-bar-test";
 
 //sessionStorage 사용 (변경된 layout 값을 저장함)
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-export default function FlexTest5() {
+export default function FlexTest() {
   const [mounted, setMounted] = useState(false);
   const [layout, setLayout] = useState(() => {
     // sessionStorage에서 layout 값을 가져옴(layout을 string 형식으로 가져옴 -> why?)
@@ -70,8 +69,7 @@ export default function FlexTest5() {
                 resize: "both",
               }}
             >
-              {/* <ReactChartTest /> */}
-              <BarChartTest />
+              <ReactChartTest />
             </div>
             {i}
           </div>
