@@ -24,7 +24,6 @@ ChartJS.register(
   Legend
 );
 
-// POST 요청 보내기
 // y축 데이터 생성
 const arr = [];
 for (let i = 0; i < 10; i++) {
@@ -87,7 +86,7 @@ const data = {
 
 // Line.register(CategoryScale);
 
-const ReactChartTest2 = () => {
+const ReactChart = () => {
   return (
     // <Container>
     <div
@@ -106,7 +105,7 @@ const ReactChartTest2 = () => {
   );
 };
 
-export default ReactChartTest2;
+export default ReactChart;
 
 const Container = styled.div`
   width: 100%;
