@@ -1,14 +1,16 @@
 import "./App.css";
-import FelxTest4 from "./constant/flexTest4";
+import BarFlexTest from "./constant/bar-flexTest";
+import BarChart from "./constant/barChart";
 import FlexTest from "./constant/flexTest5";
-import ReactChartTest from "./constant/react-chart";
+import BarChartTest from "./constant/react-chart-bar-test";
 
 function App() {
   return (
     <div className="App">
-      {/* <FelxTest4 /> */}
       <FlexTest />
-      {/* <ReactChartTest /> */}
+      <BarFlexTest />
+      {/* <BarChartTest /> */}
+      {/* <BarChart /> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import axios from "axios";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Chart as ChartJS,
@@ -24,9 +24,9 @@ ChartJS.register(
 );
 
 const ReactChartTest = () => {
-  const [chartData, setChartData] = React.useState(null);
+  const [chartData, setChartData] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios({
       url: "/api/v1/tibco/dash/get/top",
       method: "post",
@@ -62,18 +62,9 @@ const ReactChartTest = () => {
   }, []);
 
   const options = {
-    // maintainAspectRatio와 함께 사용하여 차트의 크기를 조절합니다.
-    responsive: false,
-    // 가로 세로 비율을 고정하지 않습니다.
-    maintainAspectRatio: false,
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
+    title: {
+      display: true,
+      text: "Chart.js Bar Chart",
     },
   };
 
@@ -88,7 +79,7 @@ const ReactChartTest = () => {
         top: "0",
       }}
     >
-      {chartData && <Line data={chartData} />}
+      {chartData && <Line data={chartData} options={options} />}
     </div>
   );
 };
